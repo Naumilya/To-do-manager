@@ -1,0 +1,13 @@
+@mixin text-body($font-size, $font-weight, $color) {
+	font-size: $font-size;
+	font-weight: $font-weight;
+	color: $color;
+}
+
+@mixin text-headline() {
+}
+
+@mixin text-body-link {
+	@include text-body(14px, 500, #120e21);
+	text-decoration: none;
+}

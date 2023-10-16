@@ -11,7 +11,7 @@
 
 <script lang="ts" setup></script>
 
-<style scoped>
+<style scoped lang="scss">
 .sidebar {
 	max-width: 288px;
 }

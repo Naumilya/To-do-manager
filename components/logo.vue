@@ -7,14 +7,14 @@
 
 <script lang="ts" setup></script>
 
-<style scoped>
+<style scoped lang="scss">
 .logo {
 	display: flex;
 	align-items: center;
 	column-gap: 20px;
 
 	padding: 24px;
-	color: var(--black-text-color);
+	color: $black-text-color;
 
 	text-decoration: none;
 	font-weight: 700;

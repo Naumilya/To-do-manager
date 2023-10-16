@@ -52,31 +52,43 @@
 
 <script lang="ts" setup></script>
 
-<style scoped>
+<style scoped lang="scss">
 .navigation {
-}
-.menu {
-	list-style: none;
-}
-.menu__item {
-	padding: 8px 24px;
-}
+	.menu {
+		list-style: none;
 
-.menu__item_active {
-	border-left: 3px solid var(--primary-color);
-}
-.menu__link {
-	display: flex;
-	text-align: center;
-	column-gap: 12px;
-	text-decoration: none;
-	color: var(--black-text-color);
-}
-.menu__link-icon {
-	max-width: 24px;
-}
-.menu__link-name {
-}
-.menu__link-counter {
+		&__item {
+			padding: 8px 24px;
+			transition: all 0.3s;
+
+			&:hover,
+			&_active {
+				border-left: 3px solid $primary-color;
+				background: linear-gradient(
+					to right,
+					rgba($primary-color, 0.15) 5%,
+					#fff
+				);
+			}
+		}
+
+		&__link {
+			display: flex;
+			text-align: center;
+			column-gap: 12px;
+			text-decoration: none;
+			color: $black-text-color;
+
+			&-icon {
+				max-width: 24px;
+			}
+
+			&-name {
+			}
+
+			&-counter {
+			}
+		}
+	}
 }
 </style>
