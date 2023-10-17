@@ -2,21 +2,30 @@
 	<nav class="navigation">
 		<logo />
 		<ul class="menu">
-			<li class="menu__item menu__item_active">
-				<NuxtLink class="menu__link" to="/all-tasksspan ">
+			<li
+				class="menu__item"
+				:class="{ menu__item_active: $route.path === '/' }"
+			>
+				<NuxtLink class="menu__link" to="/">
 					<img src="@/assets/svgs/grid.svg" alt="" class="menu__link-icon" />
-					<span class="menu__link-name"> All Tasks</span>
+					<span class="menu__link-name">All Tasks</span>
 					<span class="menu__link-counter">24</span>
 				</NuxtLink>
 			</li>
-			<li class="menu__item">
+			<li
+				class="menu__item"
+				:class="{ menu__item_active: $route.path === '/starred' }"
+			>
 				<NuxtLink class="menu__link" to="/starred">
 					<img src="@/assets/svgs/star.svg" alt="" class="menu__link-icon" />
-					<span> Starred</span>
+					<span>Starred</span>
 					<span class="menu__link-counter"></span>
 				</NuxtLink>
 			</li>
-			<li class="menu__item">
+			<li
+				class="menu__item"
+				:class="{ menu__item_active: $route.path === '/important' }"
+			>
 				<NuxtLink class="menu__link" to="/important">
 					<img
 						src="@/assets/svgs/alert-circle.svg"
@@ -28,7 +37,10 @@
 				</NuxtLink>
 			</li>
 
-			<li class="menu__item">
+			<li
+				class="menu__item"
+				:class="{ menu__item_active: $route.path === '/completed' }"
+			>
 				<NuxtLink class="menu__link" to="/completed">
 					<img
 						src="@/assets/svgs/check-circle.svg"
@@ -39,10 +51,13 @@
 					<span class="menu__link-counter">7</span>
 				</NuxtLink>
 			</li>
-			<li class="menu__item">
+			<li
+				class="menu__item"
+				:class="{ menu__item_active: $route.path === '/deleted' }"
+			>
 				<NuxtLink class="menu__link" to="/deleted">
 					<img src="@/assets/svgs/trash.svg" alt="" class="menu__link-icon" />
-					<span class="menu__link-name"> Deleted</span>
+					<span class="menu__link-name">Deleted</span>
 					<span class="menu__link-counter">16</span>
 				</NuxtLink>
 			</li>
@@ -53,20 +68,20 @@
 <script lang="ts" setup></script>
 
 <style scoped lang="scss">
+@use '@/assets/scss/_colors.scss';
 .navigation {
 	.menu {
 		list-style: none;
 
 		&__item {
 			padding: 8px 24px;
-			transition: all 0.3s;
 
 			&:hover,
 			&_active {
-				border-left: 3px solid $primary-color;
+				border-left: 3px solid colors.$primary-color;
 				background: linear-gradient(
 					to right,
-					rgba($primary-color, 0.15) 5%,
+					rgba(colors.$primary-color, 0.15) 5%,
 					#fff
 				);
 			}
@@ -77,7 +92,7 @@
 			text-align: center;
 			column-gap: 12px;
 			text-decoration: none;
-			color: $black-text-color;
+			color: colors.$black-text-color;
 
 			&-icon {
 				max-width: 24px;
@@ -87,6 +102,7 @@
 			}
 
 			&-counter {
+				margin-left: auto;
 			}
 		}
 	}

@@ -8,13 +8,14 @@
 <script lang="ts" setup></script>
 
 <style scoped lang="scss">
+@use '@/assets/scss/_colors.scss';
 .logo {
 	display: flex;
 	align-items: center;
 	column-gap: 20px;
 
 	padding: 24px;
-	color: $black-text-color;
+	color: colors.$black-text-color;
 
 	text-decoration: none;
 	font-weight: 700;
